@@ -271,3 +271,28 @@ function reproduceBug() {
 document
   .querySelector(".bug-button")
   .addEventListener("click", reproduceBug);
+
+  // Inspecting Values in DevTools
+
+// This function is for practicing the Scope Pane, Watch Expressions, and Console.
+function inspectVariableValues() {
+  const rawInput = document.querySelector("#inspect-number").value;
+  const convertedNumber = Number(rawInput);
+  const doubledNumber = convertedNumber * 2;
+  const petName = pet_info.name;
+  const petMood = pet_info.comment;
+
+  document.querySelector(".inspect-result").textContent =
+    petName + " doubled your number to " + doubledNumber;
+
+  console.log("Inspect practice rawInput:", rawInput);
+  console.log("Inspect practice convertedNumber:", convertedNumber);
+  console.log("Inspect practice doubledNumber:", doubledNumber);
+  console.log("Inspect practice petName:", petName);
+  console.log("Inspect practice petMood:", petMood);
+}
+
+// Connect the inspect button to the function
+document
+  .querySelector(".inspect-button")
+  .addEventListener("click", inspectVariableValues);
