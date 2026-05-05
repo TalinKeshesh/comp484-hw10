@@ -296,3 +296,25 @@ function inspectVariableValues() {
 document
   .querySelector(".inspect-button")
   .addEventListener("click", inspectVariableValues);
+
+  // Apply a Fix
+
+// This function fixes the earlier bug.
+// Number() converts the input from text into a real number before adding 1.
+function runFixedCode() {
+  const userInput = document.querySelector("#fixed-number").value;
+  const convertedInput = Number(userInput);
+  const result = convertedInput + 1;
+
+  document.querySelector(".fixed-result").textContent = result;
+
+  console.log("Fixed code ran successfully.");
+  console.log("Original input:", userInput);
+  console.log("Converted input:", convertedInput);
+  console.log("Correct result:", result);
+}
+
+// Connect the fixed button to the function
+document
+  .querySelector(".fixed-button")
+  .addEventListener("click", runFixedCode);
