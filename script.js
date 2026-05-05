@@ -122,3 +122,76 @@ function playButtonSound() {
   sound.currentTime = 0;
   sound.play();
 }
+
+//Chrome DevTools Message Logging Examples
+
+// Log Info example
+function logInfoExample() {
+  console.info("INFO: The pickle pet app loaded a normal information message.");
+}
+
+// Log Warning example
+function logWarningExample() {
+  console.warn("WARNING: The pickle pet is getting too playful!");
+}
+
+// Log Error example
+function logErrorExample() {
+  console.error("ERROR: Something went wrong with the pickle pet example.");
+}
+
+// Log Table example
+function logTableExample() {
+  console.table([
+    {
+      action: "Treat",
+      happinessChange: "+1",
+      weightChange: "+1",
+      brineChange: "0"
+    },
+    {
+      action: "Play",
+      happinessChange: "+1",
+      weightChange: "-1",
+      brineChange: "0"
+    },
+    {
+      action: "Exercise",
+      happinessChange: "-1",
+      weightChange: "-1",
+      brineChange: "0"
+    },
+    {
+      action: "Brine",
+      happinessChange: "+1",
+      weightChange: "0",
+      brineChange: "+1"
+    }
+  ]);
+}
+
+// Log Group example
+function logGroupExample() {
+  console.group("Pickle Pet Status Group");
+  console.log("Name: " + pet_info.name);
+  console.log("Weight: " + pet_info.weight);
+  console.log("Happiness: " + pet_info.happiness);
+  console.log("Brine Level: " + pet_info.brine);
+  console.groupEnd();
+}
+
+// Log Custom example
+function logCustomExample() {
+  console.log(
+    "%cCustom Pickle Message: DevTools can style console messages!",
+    "color: green; font-size: 18px; font-weight: bold;"
+  );
+}
+
+// Connect message logging buttons to their functions
+document.querySelector(".log-info-button").addEventListener("click", logInfoExample);
+document.querySelector(".log-warning-button").addEventListener("click", logWarningExample);
+document.querySelector(".log-error-button").addEventListener("click", logErrorExample);
+document.querySelector(".log-table-button").addEventListener("click", logTableExample);
+document.querySelector(".log-group-button").addEventListener("click", logGroupExample);
+document.querySelector(".log-custom-button").addEventListener("click", logCustomExample);

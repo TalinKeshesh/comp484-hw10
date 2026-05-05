@@ -258,7 +258,46 @@ main {
 
 */
 
+/* Chrome DevTools practice section */
+.devtools-section {
+  margin-top: 25px;
+  padding: 18px;
+  background-color: #f8fff5;
+  border: 3px solid #79ff79;
+  border-radius: 18px;
+  box-shadow: 0 4px 10px rgba(0, 98, 46, 0.12);
+}
 
+.devtools-section h2 {
+  margin-top: 0;
+  color: #00622e;
+  font-size: 1.4rem;
+}
+
+.devtools-section p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.devtools-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.devtools-buttons button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 999px;
+  background-color: #00622e;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.devtools-buttons button:hover {
+  background-color: #5c9b33;
+}
 
 
 
