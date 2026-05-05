@@ -1,0 +1,124 @@
+$(function() { // Makes sure that your function is called once all the DOM elements of the page are ready to be used.
+    
+    // Called function to update the name, happiness, and weight of our pet in our HTML
+    checkAndUpdatePetInfoInHtml();
+  
+    // When each button is clicked, it will "call" function for that button (functions are below)
+    $('.treat-button').click(clickedTreatButton);
+    $('.play-button').click(clickedPlayButton);
+    $('.exercise-button').click(clickedExerciseButton);
+    $('.brine-button').click(clickedBrineButton);
+  
+
+  
+    
+  })
+  
+    // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
+    var pet_info = {name:"Picklesss", weight:2, happiness:8, brine:3, comment: "I'm ready to roll!"};
+  
+    function clickedTreatButton() {
+      pet_info.happiness += 1;
+      pet_info.weight += 1;
+      pet_info.comment = "Yum! That hit the spot.",
+      playButtonSound();
+      updatePetMoodBox("mood-normal");
+      updatePetImage("normalPickle.png");
+      checkAndUpdatePetInfoInHtml();
+    }
+    
+    function clickedPlayButton() {
+      pet_info.happiness += 1;
+      pet_info.weight -= 1;
+      pet_info.comment = "Wheee! Pickle power!";
+      playButtonSound();
+      updatePetMoodBox("mood-happy");
+      updatePetImage("happyPickle.png");
+      checkAndUpdatePetInfoInHtml();
+    }
+    
+    function clickedExerciseButton() {
+      pet_info.happiness -= 1;
+      pet_info.weight -= 1;
+      pet_info.comment = "I am one tired pickle...";
+      playButtonSound();
+      updatePetMoodBox("mood-sad");
+      updatePetImage("sadPickle.png");
+      checkAndUpdatePetInfoInHtml();
+    }
+
+    function clickedBrineButton() {
+      pet_info.brine += 1;
+      pet_info.happiness += 1;
+      pet_info.comment = "Ahhh, extra briny and happy.";
+      playButtonSound();
+      updatePetMoodBox("mood-briny");
+      updatePetImage("brinyPickle.png");
+      checkAndUpdatePetInfoInHtml();
+    }
+  
+    function checkAndUpdatePetInfoInHtml() {
+      checkWeightAndHappinessBeforeUpdating();  
+      updatePetInfoInHtml();
+    }
+    
+    function checkWeightAndHappinessBeforeUpdating() {
+      if (pet_info.weight < 0) {
+        pet_info.weight = 0;
+      }
+
+      if (pet_info.happiness < 0) {
+        pet_info.happiness = 0;
+      }
+    }
+    
+    // Updates your HTML with the current values in your pet_info object
+    function updatePetInfoInHtml() {
+      document.querySelector('.name').textContent = pet_info.name;
+      document.querySelector('.weight').textContent = pet_info.weight;
+      document.querySelector('.happiness').textContent = pet_info.happiness;
+      document.querySelector('.brine').textContent = pet_info.brine;
+      document.querySelector('.comment').textContent = pet_info.comment;
+    }
+
+
+    //Soooo basically .removeClass() clears the previous mood styling, and .show()
+    // displays the comment box after the user interacts with a button
+
+    //After a button is clicked, .removeClass() clears the previous mood styling
+    // from the bottom comment box so the new button reaction can be applied correctly.
+    // Then .show() displays the comment box so the updated text and color appear on the page
+    function showPetComment(message, moodClass) {
+      // Put the pet's message into the span without using .text()
+      document.querySelector('.comment').innerHTML = message;
+
+      // .removeClass() removes old mood classes so only one mood style stays active
+      $('.pet-comment-box').removeClass('mood-normal mood-happy mood-sad mood-briny');
+
+      // Add the new mood class with plain JavaScript instead of .addClass()
+      document.querySelector('.pet-comment-box').classList.add(moodClass);
+
+      // .show() makes the hidden comment box appear after a button press
+      $('.pet-comment-box').show();
+    }
+
+
+
+    function updatePetMoodBox(moodClass) {
+      // .removeClass() removes old mood classes so only one mood style stays active
+      $('.pet-comment-box').removeClass('mood-normal mood-happy mood-sad mood-briny');
+      document.querySelector('.pet-comment-box').classList.add(moodClass);
+      // .show() makes the hidden comment box appear after a button press
+      $('.pet-comment-box').show();
+    }
+
+
+function updatePetImage(imageFile) {
+  $('.pet-image').attr('src', 'images/' + imageFile);
+}
+
+function playButtonSound() {
+  const sound = document.getElementById('button-sound');
+  sound.currentTime = 0;
+  sound.play();
+}

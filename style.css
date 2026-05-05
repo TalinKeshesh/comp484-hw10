@@ -1,0 +1,275 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  margin: 0;
+  padding: 30px 20px;
+  background: linear-gradient(to bottom, #dff7d8, #f4fff1);
+  color: #184d2f;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+  color: #00622e;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #3f6b4f;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.pet-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8fff5;
+  border: 4px solid #79ff79;
+  border-radius: 28px;
+  box-shadow: 0 10px 30px rgba(0, 98, 46, 0.15);
+  padding: 30px;
+  max-width: 950px;
+  width: 100%;
+}
+
+.pet-image-container {
+  background-color: #ffffff;
+  border: 4px solid #5c9b33;
+  border-radius: 24px;
+  padding: 18px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  position: relative;
+  right: 25px;
+}
+
+.pet-image {
+  display: block;
+  width: 280px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.dashboard {
+  min-width: 280px;
+  max-width: 380px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.dashboard div {
+  margin-bottom: 6px;
+}
+
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.button-container button {
+  min-width: 105px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(to bottom, #0c7a3b, #064f26);
+  box-shadow: 0 4px 10px rgba(0, 98, 46, 0.2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.button-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 98, 46, 0.28);
+}
+
+.pet-comment-box {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  width: fit-content;
+  max-width: 100%;
+}
+
+.mood-normal {
+  background-color: #00622e;
+  color: white;
+}
+
+.mood-happy {
+  background-color: #79ff79;
+  color: #114d11;
+}
+
+.mood-sad {
+  background-color: #00635e;
+  color: white;
+}
+
+.mood-briny {
+  background-color: #5c9b33;
+  color: white;
+}
+
+
+
+/* Before I made it all pretty*/
+
+/*
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: helvetica, arial, sans-serif;
+    margin: 25px;
+  }
+  
+  main {
+    display:block;
+    height:175px;
+  }
+  
+  header {
+    border-bottom: 1px solid black;
+  }
+  
+  h1 {
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .bold {
+    font-weight: bold;
+  }
+  
+  p {
+    max-width: 600px;
+  }
+  
+  
+  li {
+    margin-bottom: 5px;
+  }
+  
+  footer {
+    padding-top: 25px;
+    border-top: 1px solid black;
+  }
+  
+  footer a {
+    float:left;
+    margin:5px;
+  }
+  
+  .pet-image {
+    height:250px;
+  }
+  
+  .dashboard div {
+    display:block;
+  }
+  
+  .pet-image-container {
+    float:left;
+    padding:10px;
+  }
+  
+  .dashboard {
+    float:left;
+    padding:20px;
+  }
+  
+  .button-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .button-container button {
+    width: 100px;
+      margin-right: 10px;
+      text-align: center;
+      display: inline-block;
+    font-size:15px;
+    background-color: #1e2835;
+    border-color: #404853;
+    cursor:pointer;
+    background-image: linear-gradient(to bottom,rgba(246,246,246,.1)0%,rgba(30,40,53,0)66%);
+    color: #fafafa;
+    padding: 6px 10px;
+  }
+
+  .pet-comment-box {
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid black;
+  width: 260px;
+}
+
+.mood-normal {
+  background-color: #00622e;
+}
+
+.mood-happy {
+  background-color: #79ff79;
+}
+
+.mood-sad {
+  background-color: #00635e;
+}
+
+.mood-briny {
+  background-color: #5c9b33;
+}
+
+.pet-comment-box {
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid black;
+  width: fit-content;
+  max-width: 320px;
+}
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
