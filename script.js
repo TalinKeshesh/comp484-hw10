@@ -195,3 +195,39 @@ document.querySelector(".log-error-button").addEventListener("click", logErrorEx
 document.querySelector(".log-table-button").addEventListener("click", logTableExample);
 document.querySelector(".log-group-button").addEventListener("click", logGroupExample);
 document.querySelector(".log-custom-button").addEventListener("click", logCustomExample);
+
+//Browser Logged Message Examples
+
+// This causes a 404 network error by asking the browser to load an image that does not exist.
+function cause404NetworkError() {
+  const missingImage = new Image();
+  missingImage.src = "images/this-file-does-not-exist.png";
+  document.body.appendChild(missingImage);
+
+  console.log("A missing image was requested. Check the Console or Network tab for the 404 error.");
+}
+
+// This causes a TypeError by trying to use a method on a value that does not have that method.
+function causeTypeError() {
+  let pickleName = null;
+
+  // This line causes: TypeError: Cannot read properties of null
+  pickleName.toUpperCase();
+}
+
+// This causes a browser violation by running a slow click handler.
+// Chrome may show a [Violation] message if the function blocks the page for long enough.
+function causeViolation() {
+  const startTime = Date.now();
+
+  while (Date.now() - startTime < 1000) {
+    // Intentionally block the browser for 1 second
+  }
+
+  console.log("Finished the intentionally slow function. Look for a [Violation] message in DevTools.");
+}
+
+// Connect browser message buttons to their functions
+document.querySelector(".cause-404-button").addEventListener("click", cause404NetworkError);
+document.querySelector(".cause-typeerror-button").addEventListener("click", causeTypeError);
+document.querySelector(".cause-violation-button").addEventListener("click", causeViolation);
