@@ -231,3 +231,25 @@ function causeViolation() {
 document.querySelector(".cause-404-button").addEventListener("click", cause404NetworkError);
 document.querySelector(".cause-typeerror-button").addEventListener("click", causeTypeError);
 document.querySelector(".cause-violation-button").addEventListener("click", causeViolation);
+
+//Chrome DevTools Filter Message Examples
+
+// These messages are created so we can practice filtering in the Console.
+function createFilterTestMessages() {
+  console.log("USER MESSAGE: Pickle pet normal log message");
+  console.info("INFO FILTER: Pickle pet information message");
+  console.warn("WARNING FILTER: Pickle pet warning message");
+  console.error("ERROR FILTER: Pickle pet error message");
+
+  console.log("TEXT FILTER: pickle-brine-level");
+  console.log("TEXT FILTER: pickle-happiness-level");
+
+  console.log("REGEX FILTER: pickle-123");
+  console.log("REGEX FILTER: pickle-456");
+  console.log("REGEX FILTER: cucumber-abc");
+}
+
+// Connect the filter test button to the function
+document
+  .querySelector(".filter-test-button")
+  .addEventListener("click", createFilterTestMessages);
