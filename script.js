@@ -196,7 +196,7 @@ document.querySelector(".log-table-button").addEventListener("click", logTableEx
 document.querySelector(".log-group-button").addEventListener("click", logGroupExample);
 document.querySelector(".log-custom-button").addEventListener("click", logCustomExample);
 
-//Browser Logged Message Examples
+// Browser Logged Message Examples
 
 // This causes a 404 network error by asking the browser to load an image that does not exist.
 function cause404NetworkError() {
@@ -232,7 +232,7 @@ document.querySelector(".cause-404-button").addEventListener("click", cause404Ne
 document.querySelector(".cause-typeerror-button").addEventListener("click", causeTypeError);
 document.querySelector(".cause-violation-button").addEventListener("click", causeViolation);
 
-//Chrome DevTools Filter Message Examples
+// Chrome DevTools Filter Message Examples
 
 // These messages are created so we can practice filtering in the Console.
 function createFilterTestMessages() {
@@ -253,3 +253,21 @@ function createFilterTestMessages() {
 document
   .querySelector(".filter-test-button")
   .addEventListener("click", createFilterTestMessages);
+
+  //Sources Debugging Practice
+
+// This function intentionally has a bug.
+// The input value is read as text, so "5" + 1 becomes "51" instead of 6.
+function reproduceBug() {
+  const userInput = document.querySelector("#bug-number").value;
+  const result = userInput + 1;
+
+  document.querySelector(".bug-result").textContent = result;
+
+  console.log("Bug reproduced. Expected number + 1, but got:", result);
+}
+
+// Connect the bug button to the buggy function
+document
+  .querySelector(".bug-button")
+  .addEventListener("click", reproduceBug);

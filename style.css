@@ -299,6 +299,23 @@ main {
   background-color: #5c9b33;
 }
 
+.debug-example {
+  margin-top: 12px;
+  font-size: 1rem;
+}
+
+.debug-example input {
+  padding: 8px;
+  border: 2px solid #5c9b33;
+  border-radius: 8px;
+  width: 80px;
+  margin: 0 8px;
+}
+
+.debug-example p {
+  margin: 10px 0;
+}
+
 
 
 
